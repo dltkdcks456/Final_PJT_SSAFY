@@ -1,0 +1,130 @@
+[
+{
+    "model": "accounts.user_followings",
+    "pk": 1,
+    "fields": {
+        "from_user": 1,
+        "to_user": 2
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 2,
+    "fields": {
+        "from_user": 1,
+        "to_user": 3
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 3,
+    "fields": {
+        "from_user": 1,
+        "to_user": 4
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 4,
+    "fields": {
+        "from_user": 2,
+        "to_user": 1
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 5,
+    "fields": {
+        "from_user": 3,
+        "to_user": 1
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 6,
+    "fields": {
+        "from_user": 3,
+        "to_user": 2
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 7,
+    "fields": {
+        "from_user": 4,
+        "to_user": 1
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 8,
+    "fields": {
+        "from_user": 4,
+        "to_user": 2
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 9,
+    "fields": {
+        "from_user": 4,
+        "to_user": 3
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 10,
+    "fields": {
+        "from_user": 5,
+        "to_user": 1
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 11,
+    "fields": {
+        "from_user": 5,
+        "to_user": 2
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 12,
+    "fields": {
+        "from_user": 5,
+        "to_user": 4
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 13,
+    "fields": {
+        "from_user": 10,
+        "to_user": 9
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 14,
+    "fields": {
+        "from_user": 13,
+        "to_user": 9
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 15,
+    "fields": {
+        "from_user": 14,
+        "to_user": 9
+    }
+},
+{
+    "model": "accounts.user_followings",
+    "pk": 16,
+    "fields": {
+        "from_user": 15,
+        "to_user": 14
+    }
+}
+]

@@ -1,0 +1,189 @@
+[
+{
+    "model": "community.comment",
+    "pk": 1,
+    "fields": {
+        "content": "다들 이거 한번 보세요 정말 재밌답니당~!!!!",
+        "review": 2,
+        "created_at": "2022-11-23T09:19:11.718",
+        "updated_at": "2022-11-23T09:19:11.726",
+        "comment_user": 1
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 2,
+    "fields": {
+        "content": "ㅎㅎㅎ 꼭 보셔요 다들~!!!",
+        "review": 3,
+        "created_at": "2022-11-23T09:25:24.860",
+        "updated_at": "2022-11-23T09:25:24.868",
+        "comment_user": 1
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 3,
+    "fields": {
+        "content": "추천 드립니당~!!!",
+        "review": 4,
+        "created_at": "2022-11-23T09:44:52.116",
+        "updated_at": "2022-11-23T09:44:52.124",
+        "comment_user": 2
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 4,
+    "fields": {
+        "content": "저두 어제 보고 왔어요~@!!! 강추에요!!!",
+        "review": 6,
+        "created_at": "2022-11-23T17:16:56.237",
+        "updated_at": "2022-11-23T17:16:56.243",
+        "comment_user": 1
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 6,
+    "fields": {
+        "content": "저도 이 영화 봤는데 정말 재밌더라구요",
+        "review": 4,
+        "created_at": "2022-11-24T21:38:21.127",
+        "updated_at": "2022-11-24T21:38:21.133",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 42,
+    "fields": {
+        "content": "오메가3를 챙겨먹는 대장님이셨구먼... 리스펙..",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:13.877",
+        "updated_at": "2022-11-25T00:20:13.883",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 43,
+    "fields": {
+        "content": "ㅋㅋㅋㅋ아 다르고 어 다르단다 분이야",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:19.493",
+        "updated_at": "2022-11-25T00:20:19.499",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 44,
+    "fields": {
+        "content": "앗...엽산 잘 못먹었는데 죄책감이...이런큰역할을",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:23.144",
+        "updated_at": "2022-11-25T00:20:23.150",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 45,
+    "fields": {
+        "content": "오징어 삼겹살..?",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:27.185",
+        "updated_at": "2022-11-25T00:20:27.189",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 46,
+    "fields": {
+        "content": "그래도 몸이 고생은 안하네",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:30.843",
+        "updated_at": "2022-11-25T00:20:30.847",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 47,
+    "fields": {
+        "content": "귀여워...",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:36.416",
+        "updated_at": "2022-11-25T00:20:36.422",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 48,
+    "fields": {
+        "content": "내 머리고쳐줄수 있떠? 수학을 넘모 못해 내 뉴렁이가 작동하질않아... 흐헝헝",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:41.072",
+        "updated_at": "2022-11-25T00:20:41.078",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 49,
+    "fields": {
+        "content": "하앟으흫",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:44.071",
+        "updated_at": "2022-11-25T00:20:44.077",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 50,
+    "fields": {
+        "content": "꺄아아아아아아아아아악악",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:47.025",
+        "updated_at": "2022-11-25T00:20:47.029",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 51,
+    "fields": {
+        "content": "몸만 고생 안 해...",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:52.013",
+        "updated_at": "2022-11-25T00:20:52.017",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 52,
+    "fields": {
+        "content": "아ㅋㅋㅋ 댓글 들어오자마자 터졌네",
+        "review": 8,
+        "created_at": "2022-11-25T00:20:57.854",
+        "updated_at": "2022-11-25T00:20:57.860",
+        "comment_user": 9
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 53,
+    "fields": {
+        "content": "아닠ㅋㅋ 오삼불고기보다 이게 더 웃겨 ㅋㅋㅋㅋ 왜일까... 분명 같은 건데말이지....",
+        "review": 8,
+        "created_at": "2022-11-25T00:21:01.837",
+        "updated_at": "2022-11-25T00:21:01.842",
+        "comment_user": 9
+    }
+}
+]
