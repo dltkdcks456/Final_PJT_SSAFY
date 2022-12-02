@@ -364,6 +364,10 @@ def movie_search(request, inputData):
 
 @api_view(['GET'])
 def movie_related(request, movie_id):
+    '''
+    관련 영화 추천: TMDB에서 제공하는 관련 추천 영화가 있으면 해당 영화의 6개를 추천, 
+    없을 경우 비슷한 장르 2개의 랜덤한 영화 6개 보여주기
+    '''
     movie = Movie.objects.get(movie_id=movie_id)
     li = movie.genres.all()
     movies = Movie.objects.filter(recommend_movie_id=movie_id).order_by('?')[:6]
@@ -386,6 +390,9 @@ def movie_related(request, movie_id):
 
 @api_view(['GET'])
 def movie_poster(request, movie_id):
+    '''
+    영화별 포스터를 출력 해주는 함수
+    '''
     posters = get_list_or_404(Poster, movie_id = movie_id)
     serializer = PosterSerializer(posters, many=True)
     return Response(serializer.data)
