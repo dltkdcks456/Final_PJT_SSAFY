@@ -328,7 +328,6 @@ export default {
                 },
               })
               .then((res) => {
-                // console.log('닌자')
                 this.followings = res.data
               })
               .catch(() => {})
@@ -459,7 +458,7 @@ export default {
                   this.followings_count = res3.data.followings_count
                 })
                 .catch((err) => {
-                  console.log('followcount errer')
+                  // console.log('followcount error')
                   console.log(err)
                 })
             })
@@ -508,7 +507,7 @@ export default {
               this.followings_count = res.data.followings_count
             })
             .catch((err) => {
-              console.log('followcount errer')
+              // console.log('followcount errer')
               console.log(err)
             })
         })

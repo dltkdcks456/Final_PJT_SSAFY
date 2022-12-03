@@ -34,7 +34,7 @@ export default {
 
     },
     getProfileImage() {
-      console.log(this.following)
+      // console.log(this.following)
       axios({
         method: 'get',
         url: `${API_URL}/accounts/profile_image/${this.follower.id}/`,
