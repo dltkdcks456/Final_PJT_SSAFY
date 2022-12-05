@@ -170,14 +170,6 @@ export default {
         console.log(err)
       })
     },
-    // infiniteHandler($state) {
-    //   if (this.limit < this.$store.state.movies.length) {
-    //     setTimeout(this.limit += 30, 2000)
-    //     $state.loaded()
-    //   } else {
-    //     $state.complete()
-    //   }
-    // }
   },  
 }
 </script>
