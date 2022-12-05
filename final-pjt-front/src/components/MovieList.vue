@@ -1,5 +1,5 @@
 <template>
-  <div class="movie_container" style="cursor:pointer" @click="getHistory" v-if="index < limit">
+  <div class="movie_container" style="cursor:pointer" @click="getHistory">
       <a class="item" >
       <img :src="imgSrc" onerror="this.style.display='none'" id="img">
       </a>
@@ -15,8 +15,6 @@ export default {
   name: 'MovieList',
   props: {
     movie: Object,
-    index: Number,
-    limit: Number, 
   },
   computed: {
     imgSrc() {

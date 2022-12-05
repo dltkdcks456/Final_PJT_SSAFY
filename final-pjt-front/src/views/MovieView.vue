@@ -60,15 +60,13 @@
         </div>
         <div class="list-card">
           <MovieList
-            v-for="(movie, index) in movies"
+            v-for="movie in movies_infinite"
             :key="`b-${movie?.id}`"
             :movie="movie"
-            :index="index"
-            :limit="limit"
           />
         </div>
         </div>
-        <infinite-loading id="movie" @infinite="infiniteHandler">
+        <infinite-loading spinner="waveDots" id="movie" @infinite="infiniteHandler">
         </infinite-loading>  
   </div>
 </template>
@@ -79,6 +77,9 @@ import UpcomingMovie from '@/components/UpcomingMovie.vue'
 import LikeToRecommend from '@/components/LikeToRecommend.vue'
 import InfiniteLoading from 'vue-infinite-loading'
 import FollowLikeMovies from '@/components/FollowLikeMovies.vue'
+import axios from 'axios'
+
+const API_URL = "http://127.0.0.1:8000"
 
 export default {
   name: 'MovieView',
@@ -91,8 +92,9 @@ export default {
   },
   data() {
     return {
-      limit: 30,
+      page: -1,
       isLoading: 0,
+      movies_infinite: []
     }
   },
   computed: {
@@ -103,7 +105,6 @@ export default {
         return this.$store.state.movies
     },
     upcomingMovies() {
-      // console.log(this.$store.state.upcomingMovies)
       return this.$store.state.upcomingMovies
     },
     recommendMovies() {
@@ -145,13 +146,38 @@ export default {
       this.$store.dispatch('trendMovies')
     },
     infiniteHandler($state) {
-      if (this.limit < this.$store.state.movies.length) {
-        setTimeout(this.limit += 30, 2000)
-        $state.loaded()
-      } else {
-        $state.complete()
-      }
-    }
+      this.page += 1
+      axios({
+        method: 'GET',
+        url: `${API_URL}/api/v1/movies/list/${this.page}/`
+      })
+      .then((res) => {
+        // console.log(res.data)
+        // console.log(res.data.length)
+        setTimeout(() => {
+          if (res.data.length > 0) {
+            res.data.forEach((movie) => {
+              this.movies_infinite.push(movie)
+            })
+            // console.log(this.movies_infinite)
+            $state.loaded()
+          } else {
+            $state.complete()
+          }
+        }, 1000)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    },
+    // infiniteHandler($state) {
+    //   if (this.limit < this.$store.state.movies.length) {
+    //     setTimeout(this.limit += 30, 2000)
+    //     $state.loaded()
+    //   } else {
+    //     $state.complete()
+    //   }
+    // }
   },  
 }
 </script>

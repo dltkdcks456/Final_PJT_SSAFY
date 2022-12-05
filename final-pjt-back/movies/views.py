@@ -118,17 +118,29 @@ def movie_history(request, movie_pk):
 
 
 @api_view(['GET'])
-def movie_list(request):
+def movie_list(request, page):
     '''
     단순히 영화 모든 정보를 나열하는 함수
     [문제사항]: 3000여개의 영화 데이터를 한꺼번에 불러오면 5.7초의 로딩 시간이 필요하다.(필요할 때마다 정보를 불러오는 최적화 필요)
     -> 시간 지연을 줄일 필요가 있음
     '''
-    movies = get_list_or_404(Movie)
+    start_idx = 15 * page
+    end_idx = 15 * (page + 1)
+    movies = get_list_or_404(Movie)[start_idx: end_idx]
     serializer = MovieListSerializer(movies, many=True)
     # print(serializer.data)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def movie_genre_list(request, genre, page):
+    start_idx = 20 * page
+    end_idx = 20 * (page + 1)
+    movies = Movie.objects.filter(genres__in=[genre])[start_idx: end_idx]
+    # print(movies)
+    # print(movies.genres.values())
+    serializer = MovieSerializer(movies, many=True)
+    # print(serializer.data)
+    return Response(serializer.data)
 
 @api_view(['GET'])
 def movie_detail(request, movie_pk):

@@ -16,8 +16,8 @@ export default new Vuex.Store({
   ],
   state: {
     token: null,
-    movies: [
-    ],
+    // movies: [
+    // ],
     upcomingMovies: [
     ],
     genres:{
@@ -73,9 +73,6 @@ export default new Vuex.Store({
         state.cnt = 0
       }
     },
-    GET_MOVIES(state, movies) {
-      state.movies = movies
-    },
     GET_UPCOMING_MOVIES(state, movies) {
       state.upcomingMovies = movies
     },
@@ -124,18 +121,6 @@ export default new Vuex.Store({
           console.log(err)
       })
     }},
-    getMovies(context) {
-      axios({
-        method: 'get',
-        url: `${API_URL}/api/v1/movies/`,
-      })
-      .then((res) => {
-        context.commit('GET_MOVIES', res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-    },
     relatedMovies(context, movie_id) {
       axios({
         method: 'get',

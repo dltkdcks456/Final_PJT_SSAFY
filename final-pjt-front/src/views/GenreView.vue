@@ -1,7 +1,6 @@
 <template>
   <div id="genre-container">
     <div id="select-form" style="width:100%">
-      
       <form @submit.prevent="getMovies" style="display:flex; align-items:center;">
         <div>
           <select v-model="onePick" class="form-select form-select mb-3" style="margin-top:15px;">
@@ -34,31 +33,32 @@
     <div id="img-container">
       <div class="list-card">
         <GenreMovieList
-          v-for="(movie, index) in selectMovie"
+          v-for="movie in selectMovie"
             :key="`kd-${movie.movie_id}`"
             :movie="movie"
-            :index="index"
-            :limit="limit"
           />
         </div>
       </div>
-      <div style="height:1px;"></div>
-    <infinite-loading id="genre" @infinite="infiniteHandler"></infinite-loading>  
+      <infinite-loading spinner="default" @infinite="infiniteHandler"></infinite-loading>  
+      <div style="height:10px;"></div>
+
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import GenreMovieList from '@/components/GenreMovieList'
 import InfiniteLoading from 'vue-infinite-loading'
+
+const API_URL = "http://127.0.0.1:8000"
 
 export default {
   name: 'GenreView',
   data() {
     return {
         onePick: 18,
-        movies: this.$store.state.movies,
         selectMovie: [],
-        limit: 30,
+        page: 0,
     }
   },
   components: { 
@@ -72,22 +72,41 @@ export default {
     getMovies() {
       this.selectMovie = []
       const number = Number(this.onePick)
-      this.movies.forEach((movie) => {
-        // console.log(movie.genres)
-        if (movie.genres.includes(number)) {
-            this.selectMovie.push(movie)
-        }
+      axios({
+        method:'get',
+        url: `${API_URL}/api/v1/movies/genre/${number}/${this.page}/`
       })
-      
+      .then((res) => {
+        res.data.forEach((movie) => {
+          this.selectMovie.push(movie)
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     },
     infiniteHandler($state) {
-      // console.log('무한스크롤')
-      if (this.limit < this.selectMovie.length) {
-        setTimeout(this.limit += 30, 2000)
-        $state.loaded()
-      } else {
-        $state.complete()
-      }
+      this.page += 1
+      const number = Number(this.onePick)
+      axios({
+        method:'get',
+        url: `${API_URL}/api/v1/movies/genre/${number}/${this.page}/`
+      })
+      .then((res) => {
+        setTimeout(() => {
+          if (res.data.length > 0) {
+            res.data.forEach((movie) => {
+            this.selectMovie.push(movie)
+            })
+            $state.loaded()
+          } else {
+            $state.complete()
+          }
+        }, 1000)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     },
   }
 }
@@ -97,7 +116,7 @@ export default {
 #img-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
 }
 
@@ -111,9 +130,10 @@ export default {
 }
 
 #genre-container {
-  width:1200px;
+  width:1000px;
   display:flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .submit-btn {

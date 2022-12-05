@@ -4,7 +4,8 @@ from . import views
 urlpatterns = [
     # path('data/', views.get_movie_data),
     # path('csv/', views.csv_to_DB),
-    path('movies/', views.movie_list),
+    path('movies/list/<int:page>/', views.movie_list),
+    path('movies/genre/<int:genre>/<int:page>/', views.movie_genre_list),
     path('movies/genres/', views.get_genre),
     path('movies/<int:movie_pk>/', views.movie_detail),
     path('movies/like/<int:movie_pk>/', views.movie_like),
